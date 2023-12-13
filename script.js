@@ -8,10 +8,21 @@ class Node {
   // do not allow any moves to go off the board
 }
 class Knight {
-  constructor(current, nextMove) {
+  constructor(startingSquare, endingSquare) {
     this.root = null;
-    this.current = current;
-    this.nextMove = nextMove;
+    this.startingSquare = startingSquare;
+    this.moves = [
+      [1, 2],
+      [1, -2],
+      [-1, 2],
+      [-1, -2],
+      [-1, -1],
+      [2, 1],
+      [2, -1],
+      [-2, 1],
+      [-2, -1],
+    ];
+    this.endingSquare = endingSquare;
   }
 }
 // output:
@@ -21,3 +32,8 @@ class Knight {
 //  [4,5]
 //  [2,4]
 //  [4,3]
+function knightMoves(startingSquare, endingSquare) {
+  const knight1 = new Knight(startingSquare, endingSquare);
+  console.log(knight1);
+}
+knightMoves[3, 3], [4, 3];
