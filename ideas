@@ -70,3 +70,10 @@ Breadth first search algorithm has:
 - `distance` =  giving the minimum number of edges in any path from the source vertex to vertex v
 - `predecessor` = vertex of v along some shortest path from the source vertex. It is some special value, such as null, indicating that it has no predecessor.
 If there is no path from the source to vertex, then the distance is infinite and its predecessor has the same special value as the source's predecessor
+
+-> a vertex's distance is null until it has been visited, where it gets a numeric value for its distance
+-> `queue` = data structure that allows us to insert and remove items, where the item removed is always the one that has been in the queue the longest *first in, first out*(concept)
+-> `enqueue(obj)` = inserts an object into the queue
+-> `dequeue` = removes from the queue the object that has been in the longest, returning this object;
+-> `isEmpty()` returns true if the queue currently contains no objects, and false if the queue contains at least one object
+- whenever we visit any vertex, we enqueue it(insert into queue)
