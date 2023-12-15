@@ -7,4 +7,4 @@ The picture is only to explain the problem, There is no need to create a GUI.
 A knight in chess can move to any square on the standard 8x8 chess board from any other square on the board, given enough turns. Its basic move is two steps forward and one step to the side or one step forward and two steps to the side. It can face any direction.
 
 - At first seems like a difficult project, what should i create first, how should i approach it? Odin Project mentions at the beginning a link to Computer science theory -> graphs. Really nice reading, it has good example to understand the connections between locations, in order to find a path between two vertices as the shortest path to reach a location
-- the exercises helped a lot to understand how the representation of the graphs work, 
+- the exercises helped a lot to understand how the representation of the graphs work and the queue that helps traversing the nodes

@@ -1,6 +1,6 @@
 Computer science theory - graphs
 
- Khan Academy computer sciency theory lesson 
+ Khan Academy computer science theory lesson 
 https://www.khanacademy.org/computing/computer-science/algorithms/graph-representation/a/describing-graphs
 
 - odin mentions graphs to help me visualize the move of the knight;
@@ -22,7 +22,7 @@ In the case of a road map, if you want to find the shortest route between two lo
 you're looking for a path between two vertices with the minimum sum of edge weights
 over all paths between the two vertices. As with unweighted graphs, we call such a path a shortest path.
 - the knight can traverse every square on the board -> `relationship between the squares goes both ways`
-![Alt text](image-2.png)
+
 
 - graph helps modeling `relationships` in real world
 
@@ -77,3 +77,16 @@ If there is no path from the source to vertex, then the distance is infinite and
 -> `dequeue` = removes from the queue the object that has been in the longest, returning this object;
 -> `isEmpty()` returns true if the queue currently contains no objects, and false if the queue contains at least one object
 - whenever we visit any vertex, we enqueue it(insert into queue)
+
+->>placing a knight randomly on a chessboard, it can take 8 possible positions
+->> if all the possible positions, that can be reached from the initial position are not visited, we `enqueue` this state into a `queue`. also increase the numbers of moves by 1 from the last state in the queue
+->> at each new position, we will check if the current position is the destination position or not. if the current is not the destination, we will take the current position from the queue and enqueue the possible positions it can move from the current position.
+->> continue until will reach the destination position or explore all the possible positions on a chessboard
+
+`Visualisation of the gameboard squares:`
+
+![Alt text](image-6.png)
+
+-> `2D Arrays (Arrays in Arrays)`
+- it will be helpful to store the indexes (rows and columns) for each square
+`Example`: [3,4] = `3` represents the row and `4` represents the column
