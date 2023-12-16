@@ -32,17 +32,17 @@ class Knight {
 //  [2,4]
 //  [4,3]
 
-const gameBoard = () => {
-  let columns = 8;
-  let rows = 8;
-  for (let i = 0; i<)
+// Create gameboard 2D Array
+function createGameBoard() {
+  const gameBoard = new Array(8).fill().map(() => new Array(8).fill(null));
+  console.log(gameBoard);
+  return gameBoard;
 }
-const knight1 = new Knight(startingSquare, endingSquare);
-console.log(knight1);
+createGameBoard();
+// const knight1 = new Knight(startingSquare, endingSquare);
+// console.log(knight1);
 
 function knightMoves(startingSquare, endingSquare) {
   const visited = [];
   const queue = [];
-  let enqueue = 
 }
-knightMoves[3, 3], [4, 3];

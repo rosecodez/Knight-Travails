@@ -72,18 +72,22 @@ Breadth first search algorithm has:
 If there is no path from the source to vertex, then the distance is infinite and its predecessor has the same special value as the source's predecessor
 
 -> a vertex's distance is null until it has been visited, where it gets a numeric value for its distance
+
 -> `queue` = data structure that allows us to insert and remove items, where the item removed is always the one that has been in the queue the longest *first in, first out*(concept)
 -> `enqueue(obj)` = inserts an object into the queue
+
 -> `dequeue` = removes from the queue the object that has been in the longest, returning this object;
+
 -> `isEmpty()` returns true if the queue currently contains no objects, and false if the queue contains at least one object
+
 - whenever we visit any vertex, we enqueue it(insert into queue)
 
-->>placing a knight randomly on a chessboard, it can take 8 possible positions
-->> if all the possible positions, that can be reached from the initial position are not visited, we `enqueue` this state into a `queue`. also increase the numbers of moves by 1 from the last state in the queue
-->> at each new position, we will check if the current position is the destination position or not. if the current is not the destination, we will take the current position from the queue and enqueue the possible positions it can move from the current position.
+->placing a knight randomly on a chessboard, it can take 8 possible positions
+-> if all the possible positions, that can be reached from the initial position are not visited, we `enqueue` this state into a `queue`. also increase the numbers of moves by 1 from the last state in the queue
+-> at each new position, we will check if the current position is the destination position or not. if the current is not the destination, we will take the current position from the queue and enqueue the possible positions it can move from the current position.
 ->> continue until will reach the destination position or explore all the possible positions on a chessboard
 
-`Visualisation of the gameboard squares:`
+`Visualization of the gameboard squares:`
 
 ![Alt text](image-6.png)
 
