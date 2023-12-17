@@ -1,16 +1,18 @@
 // eslint-disable-next-line max-classes-per-file
 class Node {
-  constructor(position) {
-    this.position = position;
-    this.children = [];
-    this.parent = null;
+  // node constructor that represents a square on the board
+  constructor(x, y, path) {
+    // coordinates
+    this.x = x;
+    this.y = y;
+    // path that is an array [x,y] showing how the knight reached the square
+    this.path = path || [x, y];
   }
-  // do not allow any moves to go off the board
 }
 class Knight {
-  constructor(startingSquare, endingSquare) {
-    this.startingSquare = startingSquare;
-    // 8 possible moves
+  constructor(knightPosition) {
+    this.knightPosition = knightPosition;
+    // 8 possible moves the knight can make from chosen starting position
     this.moves = [
       [1, 2],
       [1, -2],
@@ -21,7 +23,6 @@ class Knight {
       [-2, 1],
       [-2, -1],
     ];
-    this.endingSquare = endingSquare;
   }
 }
 // output:
@@ -32,17 +33,17 @@ class Knight {
 //  [2,4]
 //  [4,3]
 
-// Create gameboard 2D Array
+// Create gameboard 2Dimensional Array 8x8
+// by default all elements have a null value
 function createGameBoard() {
   const gameBoard = new Array(8).fill().map(() => new Array(8).fill(null));
-  console.log(gameBoard);
   return gameBoard;
 }
-createGameBoard();
-// const knight1 = new Knight(startingSquare, endingSquare);
-// console.log(knight1);
+const gameBoard = createGameBoard();
+console.log(gameBoard);
 
-function knightMoves(startingSquare, endingSquare) {
-  const visited = [];
-  const queue = [];
+function knightMoves(start, end) {
+  const knight1 = new Knight(start);
+  console.log(knight1);
+  console.log('path is out of range');
 }
