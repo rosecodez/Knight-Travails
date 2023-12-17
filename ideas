@@ -82,7 +82,7 @@ If there is no path from the source to vertex, then the distance is infinite and
 
 - whenever we visit any vertex, we enqueue it(insert into queue)
 
-->placing a knight randomly on a chessboard, it can take 8 possible positions
+-> placing a knight randomly on a chessboard, it can take 8 possible moves/positions
 -> if all the possible positions, that can be reached from the initial position are not visited, we `enqueue` this state into a `queue`. also increase the numbers of moves by 1 from the last state in the queue
 -> at each new position, we will check if the current position is the destination position or not. if the current is not the destination, we will take the current position from the queue and enqueue the possible positions it can move from the current position.
 ->> continue until will reach the destination position or explore all the possible positions on a chessboard
