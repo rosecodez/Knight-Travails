@@ -37,13 +37,14 @@ class Knight {
     const rootNode = new Node(start, null);
 
     // create queue and add starting node inside it
-    const queue = [rootNode];
+    const queue = [];
+    queue.push(rootNode);
 
     // track the visited squares
-    const visited = new Set(start);
+    const visited = [];
 
     // mark start position as visited
-    visited.add(start);
+    visited.push(start);
 
     // while we have a queue length
     while (queue.length) {
@@ -58,6 +59,7 @@ class Knight {
         this.printPath(currentNode);
         return;
       }
+
       // check all possible moves from current position
       this.moves.forEach((move) => {
         // calculate potential next row and column
@@ -67,9 +69,9 @@ class Knight {
         // combine row and column to store in visited set
         const newPosition = `${newRow},${newCol}`;
         // if new position is on board and its not the visited
-        if (this.isSquareOnBoard(newRow, newCol) && !visited.has(newPosition)) {
+        if (this.isSquareOnBoard(newRow, newCol) && !visited.includes(newPosition)) {
           // add to queue
-          visited.add(newPosition);
+          visited.push(newPosition);
           // enqueue the new position as current node
           queue.push(new Node([newRow, newCol], currentNode));
         }
@@ -78,19 +80,20 @@ class Knight {
     console.log("path wasn't found");
   }
 
-  printPath(endNode) {
+  printPath(end) {
     const path = [];
 
     // set current node from end
-    let currentNode = endNode;
+    let currentNode = end;
 
     // while current node is not null
     while (currentNode !== null) {
-      // insert the current position at the start of the arrays
+      // insert the current position at the start of the path array
       path.unshift(currentNode.position);
       // move to the parent node of current node
       currentNode = currentNode.parent;
     }
+
     console.log(`You made it in ${path.length} moves! Here is your path:`);
     path.forEach((square) => console.log(`[${square[0]},${square[1]}]`));
   }
@@ -103,5 +106,6 @@ class Knight {
 //  [4,5]
 //  [2,4]
 //  [4,3]
+
 const knight1 = new Knight();
 knight1.knightMoves([3, 3], [4, 3]);
