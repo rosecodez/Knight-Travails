@@ -6,13 +6,15 @@ class Node {
     this.x = x;
     this.y = y;
     // path that is an array [x,y] showing how the knight reached the square
-    this.path = path || [x, y];
+    // if no path given, start with just this square
+    this.path = path || [[x, y]];
   }
 }
 class Knight {
   constructor(knightPosition) {
     this.knightPosition = knightPosition;
     // 8 possible moves the knight can make from chosen starting position
+    // L shape moves
     this.moves = [
       [1, 2],
       [1, -2],
@@ -24,6 +26,31 @@ class Knight {
       [-2, -1],
     ];
   }
+
+  // helper method to check if a move is on the board
+  // between 0 and 7
+  isValid(x, y) {
+    return x >= 0 && x < 8 && y >= 0 && y < 8;
+  }
+
+  knightMoves(start, end) {
+    const knight1 = new Knight(start);
+    console.log(knight1);
+    // create node for starting position
+    const startNode = new Node(start[0], start[1]);
+
+    // create queue for the squares we will visit and add starting node
+    const queue = [startNode];
+
+    // visited array key set
+    const visited = new Set([startNode]);
+
+    // while we have a queue
+    while (queue.length) {
+      const currentNode = queue.shift();
+    }
+    console.log('path is out of range');
+  }
 }
 // output:
 //   > knightMoves([3,3],[4,3])
@@ -32,18 +59,3 @@ class Knight {
 //  [4,5]
 //  [2,4]
 //  [4,3]
-
-// Create gameboard 2Dimensional Array 8x8
-// by default all elements have a null value
-function createGameBoard() {
-  const gameBoard = new Array(8).fill().map(() => new Array(8).fill(null));
-  return gameBoard;
-}
-const gameBoard = createGameBoard();
-console.log(gameBoard);
-
-function knightMoves(start, end) {
-  const knight1 = new Knight(start);
-  console.log(knight1);
-  console.log('path is out of range');
-}
